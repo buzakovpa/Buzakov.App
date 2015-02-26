@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
-
+using System.Web.Mvc;
+using System.Web.UI;
 using Buzakov.App.DataContext;
 using Buzakov.App.DataContext.EntityManager;
 using Buzakov.App.Repositories;
@@ -8,20 +10,22 @@ using Buzakov.App.Repositories;
 namespace Buzakov.App.FiveFilms.Controllers
 {
 
-    [Authorize, RoutePrefix("api/Users")]
+    [System.Web.Http.Authorize, System.Web.Http.RoutePrefix("api/Users")]
     public class UsersController : ApiController
     {
 
         private readonly UserProfileRepository _userProfileRepository;
 
-        public UsersController(IEntityManager entityManager)
+        public UsersController( )
         {
-            _userProfileRepository = entityManager.GetRepository<UserProfileRepository>( );
+            var entityManager = DependencyResolver.Current.GetService<IEntityManager>( );
+            _userProfileRepository = entityManager.GetRepository<UserProfileRepository>();
         }
 
-        public IEnumerable<UserProfile> Get( )
+
+        public List<UserProfile> Get( )
         {
-            return _userProfileRepository.AsQueryable( );
+            return _userProfileRepository.AsQueryable( ).ToList( );
         }
 
         // GET api/values/5

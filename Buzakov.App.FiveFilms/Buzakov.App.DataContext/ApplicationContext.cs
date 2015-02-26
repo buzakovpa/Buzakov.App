@@ -12,8 +12,6 @@ namespace Buzakov.App.DataContext
         {
         }
 
-        public IDbSet<UserClaim> UserClaim { get; set; }
-
     }
 
 }

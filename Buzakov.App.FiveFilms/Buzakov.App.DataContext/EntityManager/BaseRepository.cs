@@ -15,6 +15,7 @@ namespace Buzakov.App.DataContext.EntityManager
         public void SetEntityManager(IEntityManager entityManager)
         {
             _entityManager = entityManager;
+            _dbSet = _entityManager.GetContext( ).Set<TEntity>( );
         }
 
         public TEntity Insert(TEntity entity)

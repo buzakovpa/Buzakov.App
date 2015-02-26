@@ -88,7 +88,7 @@ namespace Buzakov.App.FiveFilms.Controllers
 
             List<UserLoginInfoViewModel> logins = new List<UserLoginInfoViewModel>();
 
-            foreach (UserLogin linkedAccount in user.Logins)
+            foreach (IdentityUserLogin linkedAccount in user.Logins)
             {
                 logins.Add(new UserLoginInfoViewModel
                 {
@@ -276,10 +276,9 @@ namespace Buzakov.App.FiveFilms.Controllers
 
                 // FIX
                 var info = await Authentication.GetExternalLoginInfoAsync();
-                
-                var username = info.Email ?? info.DefaultUserName;
+                var username = info.Email ?? (info.DefaultUserName + "@vk.com");
 
-                user = new UserProfile { Email = username + "@vk.com", UserName = username };
+                user = new UserProfile { Email = username, UserName = info.DefaultUserName };
                 var result = await UserManager.CreateAsync(user);
                 if (!result.Succeeded)
                 {

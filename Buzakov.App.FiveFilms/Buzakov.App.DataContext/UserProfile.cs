@@ -6,8 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace Buzakov.App.DataContext
 {
 
-    public class UserProfile :
-        IdentityUser<string, UserLogin, UserRole, UserClaim>
+    public class UserProfile : IdentityUser
     {
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<UserProfile, string> manager, string authenticationType)

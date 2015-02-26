@@ -13,7 +13,7 @@ namespace Buzakov.App.FiveFilms
     public class ApplicationUserManager : UserManager<UserProfile, string>
     {
 
-        public ApplicationUserManager(UserStore<UserProfile, Role, string, UserLogin, UserRole, UserClaim> store)
+        public ApplicationUserManager(UserStore<UserProfile> store)
             : base(store)
         {
         }
@@ -22,7 +22,7 @@ namespace Buzakov.App.FiveFilms
         {
             var dbContext = DependencyResolver.Current.GetService<ApplicationContext>();
 
-            var manager = new ApplicationUserManager(new UserStore<UserProfile, Role, string, UserLogin,UserRole, UserClaim>(dbContext));
+            var manager = new ApplicationUserManager(new UserStore<UserProfile>(dbContext));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<UserProfile>(manager)
             {
