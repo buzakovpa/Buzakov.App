@@ -1,0 +1,4 @@
+C:\Users\buzakovpa\YandexDisk\Project\5Films\Buzakov.App.FiveFilms\Buzakov.App.Models\bin\Debug\Buzakov.App.Models.dll
+C:\Users\buzakovpa\YandexDisk\Project\5Films\Buzakov.App.FiveFilms\Buzakov.App.Models\bin\Debug\Buzakov.App.Models.pdb
+C:\Users\buzakovpa\YandexDisk\Project\5Films\Buzakov.App.FiveFilms\Buzakov.App.Models\obj\Debug\Buzakov.App.Models.dll
+C:\Users\buzakovpa\YandexDisk\Project\5Films\Buzakov.App.FiveFilms\Buzakov.App.Models\obj\Debug\Buzakov.App.Models.pdb
