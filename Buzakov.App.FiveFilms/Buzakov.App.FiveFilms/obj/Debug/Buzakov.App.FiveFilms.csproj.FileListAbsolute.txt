@@ -233,3 +233,5 @@ C:\Users\Pavel\Source\Repos\Buzakov.App\Buzakov.App.FiveFilms\Buzakov.App.FiveFi
 C:\Users\Pavel\Source\Repos\Buzakov.App\Buzakov.App.FiveFilms\Buzakov.App.FiveFilms\bin\System.Web.Optimization.xml
 C:\Users\Pavel\Source\Repos\Buzakov.App\Buzakov.App.FiveFilms\Buzakov.App.FiveFilms\bin\Buzakov.App.Models.pdb
 C:\Users\Pavel\Source\Repos\Buzakov.App\Buzakov.App.FiveFilms\Buzakov.App.FiveFilms\obj\Debug\Buzakov.App.FiveFilms.pdb
+C:\Users\Pavel\Source\Repos\Buzakov.App\Buzakov.App.FiveFilms\Buzakov.App.FiveFilms\bin\Buzakov.App.Services.dll
+C:\Users\Pavel\Source\Repos\Buzakov.App\Buzakov.App.FiveFilms\Buzakov.App.FiveFilms\bin\Buzakov.App.Services.pdb

@@ -208,6 +208,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Api\Controllers\RolesController.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -238,7 +239,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Areas\Api\Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -308,6 +309,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Api\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -321,6 +323,10 @@
     <ProjectReference Include="..\Buzakov.App.Repositories\Buzakov.App.Repositories.csproj">
       <Project>{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}</Project>
       <Name>Buzakov.App.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Buzakov.App.Services\Buzakov.App.Services.csproj">
+      <Project>{3b8378d8-ba89-41d3-a8be-db5168bc43e5}</Project>
+      <Name>Buzakov.App.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

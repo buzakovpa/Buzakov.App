@@ -75,7 +75,7 @@
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
     <Compile Include="EntityManager\BaseRepository.cs" />
-    <Compile Include="EntityManager\DefaultEntityManager.cs" />
+    <Compile Include="EntityManager\EntityManager.cs" />
     <Compile Include="EntityManager\IEntityManager.cs" />
     <Compile Include="EntityManager\IRepository.cs" />
     <Compile Include="Migrations\201502251926145_Init.cs" />

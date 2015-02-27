@@ -49,7 +49,6 @@ namespace Buzakov.App.FiveFilms.Controllers
                 _userManager = value;
             }
         }
-
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         // GET api/Account/UserInfo

@@ -9,13 +9,23 @@ namespace Buzakov.App.DataContext.EntityManager
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class, new( )
     {
 
-        private IDbSet<TEntity> _dbSet { get; set; }
+        private IDbSet<TEntity> _dbSet;
         private IEntityManager _entityManager;
 
         public void SetEntityManager(IEntityManager entityManager)
         {
             _entityManager = entityManager;
             _dbSet = _entityManager.GetContext( ).Set<TEntity>( );
+        }
+
+        public TEntity Find(int id)
+        {
+            return _dbSet.Find(id);
+        }
+
+        public TEntity Find(string id)
+        {
+            return _dbSet.Find(id);
         }
 
         public TEntity Insert(TEntity entity)
@@ -26,7 +36,8 @@ namespace Buzakov.App.DataContext.EntityManager
         public TEntity Update(TEntity entity)
         {
             var dbContext = _entityManager.GetContext( );
-            dbContext.Entry<TEntity>(entity).State = System.Data.Entity.EntityState.Modified;
+            dbContext.Entry(entity).State = EntityState.Modified;
+
             return entity;
         }
 
@@ -44,10 +55,11 @@ namespace Buzakov.App.DataContext.EntityManager
         {
             var query = _dbSet.AsQueryable( );
 
-            var entity = new TEntity( );
-            if (entity is ISoftDelete) {
+            var tmpEntity = new TEntity( );
+            if (tmpEntity is ISoftDelete) {
                 return query.Where(a => (a is ISoftDelete) && ((ISoftDelete)a).IsDeleted != true);
             }
+
             return query;
         }
 
