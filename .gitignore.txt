@@ -1,0 +1,11 @@
+Buzakov.App.FiveFilms/Buzakov.App.DataContext/bin/*
+Buzakov.App.FiveFilms/Buzakov.App.DataContext/obj/*
+
+Buzakov.App.FiveFilms/Buzakov.App.FiveFilms/bin/*
+Buzakov.App.FiveFilms/Buzakov.App.FiveFilms/obj/*
+
+Buzakov.App.FiveFilms/Buzakov.App.Models/bin/*
+Buzakov.App.FiveFilms/Buzakov.App.Models/obj/*
+
+Buzakov.App.FiveFilms/Buzakov.App.Repositories/bin/*
+Buzakov.App.FiveFilms/Buzakov.App.Repositories/obj/*
