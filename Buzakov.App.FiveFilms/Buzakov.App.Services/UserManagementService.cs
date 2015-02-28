@@ -1,5 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Data.Entity.Core;
+using System.Linq;
 using System.Collections.Generic;
+
 using Microsoft.AspNet.Identity.EntityFramework;
 
 using Buzakov.App.DataContext;
@@ -14,11 +17,13 @@ namespace Buzakov.App.Services
 
         private readonly IEntityManager _entityManager;
         private readonly UserProfileRepository _userProfileRepository;
+        private readonly RoleRepository _roleRepository;
 
-        public UserManagementService(IEntityManager entityManager)
+        public UserManagementService( IEntityManager entityManager )
         {
             _entityManager = entityManager;
             _userProfileRepository = entityManager.GetRepository<UserProfileRepository>( );
+            _roleRepository = entityManager.GetRepository<RoleRepository>( );
         }
 
         public IEnumerable<UserProfile> GetAll( )
@@ -26,14 +31,40 @@ namespace Buzakov.App.Services
             return _userProfileRepository.AsQueryable( ).ToList( );
         }
 
-        public UserProfile Get(string id)
+        public UserProfile Details( string id )
         {
-            return _userProfileRepository.Find(id);
+            if( id == null ) {
+                throw new ArgumentNullException("id");
+            }
+
+            var entity = _userProfileRepository.Find(id);
+            if( entity == null ) {
+                throw new ObjectNotFoundException( );
+            }
+
+            return entity;
         }
 
-        public UserProfile AssineRole(string userId, IdentityRole role)
+        public UserProfile AssineRole( string userId, string roleId )
         {
+            if( userId == null ) {
+                throw new ArgumentNullException("userId");
+            }
+
+            if( roleId == null ) {
+                throw new ArgumentNullException("roleId");
+            }
+
+            var role = _roleRepository.Find(roleId);
+            if( role == null ) {
+                throw new ObjectNotFoundException( );
+            }
+
             var entity = _userProfileRepository.Find(userId);
+            if( entity == null ) {
+                throw new ObjectNotFoundException( );
+            }
+
             entity.Roles.Add(new IdentityUserRole {
                 RoleId = role.Id,
                 UserId = userId
@@ -44,14 +75,20 @@ namespace Buzakov.App.Services
             return entity;
         }
 
-        public void Delete(string id)
+        public void Delete( string id )
         {
+            if( id == null ) {
+                throw new ArgumentNullException("id");
+            }
+
             var entity = _userProfileRepository.Find(id);
+            if( entity == null ) {
+                throw new ObjectNotFoundException( );
+            }
+
             _userProfileRepository.Delete(entity);
 
             _entityManager.Commit( );
         }
-
     }
-
 }
