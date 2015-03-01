@@ -78,9 +78,14 @@
     <Compile Include="EntityManager\EntityManager.cs" />
     <Compile Include="EntityManager\IEntityManager.cs" />
     <Compile Include="EntityManager\IRepository.cs" />
+    <Compile Include="EntityManager\SoftRepository.cs" />
     <Compile Include="Migrations\201502251926145_Init.cs" />
     <Compile Include="Migrations\201502251926145_Init.Designer.cs">
       <DependentUpon>201502251926145_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201503011032400_AddDataLinkModel.cs" />
+    <Compile Include="Migrations\201503011032400_AddDataLinkModel.Designer.cs">
+      <DependentUpon>201503011032400_AddDataLinkModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Seed\ISeed.cs" />
@@ -95,6 +100,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502251926145_Init.resx">
       <DependentUpon>201502251926145_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503011032400_AddDataLinkModel.resx">
+      <DependentUpon>201503011032400_AddDataLinkModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -43,6 +43,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="Duke.Owin.VkontakteMiddleware, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Duke.Owin.VkontakteMiddleware.1.2.0.0\lib\net45\Duke.Owin.VkontakteMiddleware.dll</HintPath>
@@ -208,7 +214,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Api\Controllers\DataLinksController.cs" />
     <Compile Include="Areas\Api\Controllers\RolesController.cs" />
+    <Compile Include="Areas\Api\Models\DataLinkBindingModel.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -243,6 +251,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Mappers\DataLinkMapper.cs" />
+    <Compile Include="Infrastructure\Mappers\IMapper.cs" />
+    <Compile Include="Infrastructure\Mappers\MapperConfiguration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -309,7 +320,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Api\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -319,6 +329,10 @@
     <ProjectReference Include="..\Buzakov.App.DataContext\Buzakov.App.DataContext.csproj">
       <Project>{b7ca1f21-2d25-46e6-8adc-4856a6f5de5c}</Project>
       <Name>Buzakov.App.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Buzakov.App.Models\Buzakov.App.Models.csproj">
+      <Project>{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}</Project>
+      <Name>Buzakov.App.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Buzakov.App.Repositories\Buzakov.App.Repositories.csproj">
       <Project>{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}</Project>
@@ -357,6 +371,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

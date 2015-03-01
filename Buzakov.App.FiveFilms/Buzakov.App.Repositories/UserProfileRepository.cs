@@ -4,7 +4,7 @@ using Buzakov.App.DataContext.EntityManager;
 namespace Buzakov.App.Repositories
 {
 
-    public class UserProfileRepository : BaseRepository<UserProfile>
+    public class UserProfileRepository : SoftRepository<UserProfile>
     {
 
     }

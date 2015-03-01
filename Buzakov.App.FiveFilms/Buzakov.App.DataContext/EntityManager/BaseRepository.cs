@@ -1,7 +1,6 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
-
-using Buzakov.App.Models;
 
 namespace Buzakov.App.DataContext.EntityManager
 {
@@ -18,49 +17,36 @@ namespace Buzakov.App.DataContext.EntityManager
             _dbSet = _entityManager.GetContext( ).Set<TEntity>( );
         }
 
-        public TEntity Find(int id)
+        public virtual TEntity Find(int id)
         {
             return _dbSet.Find(id);
         }
 
-        public TEntity Find(string id)
+        public virtual TEntity Find( string id )
         {
             return _dbSet.Find(id);
         }
 
-        public TEntity Insert(TEntity entity)
+        public virtual TEntity Insert( TEntity entity )
         {
             return _dbSet.Add(entity);
         }
 
-        public TEntity Update(TEntity entity)
+        public virtual TEntity Update( TEntity entity )
         {
-            var dbContext = _entityManager.GetContext( );
-            dbContext.Entry(entity).State = EntityState.Modified;
+            _dbSet.AddOrUpdate(entity);
 
             return entity;
         }
 
-        public void Delete(TEntity entity)
+        public virtual void Delete( TEntity entity )
         {
-            if (entity is ISoftDelete) {
-                var entityWithSoftDelete = entity as ISoftDelete;
-                entityWithSoftDelete.IsDeleted = true;
-            } else {
-                _dbSet.Remove(entity);
-            }
+            _dbSet.Remove(entity);
         }
 
-        public IQueryable<TEntity> AsQueryable( )
+        public virtual IQueryable<TEntity> AsQueryable( )
         {
-            var query = _dbSet.AsQueryable( );
-
-            var tmpEntity = new TEntity( );
-            if (tmpEntity is ISoftDelete) {
-                return query.Where(a => (a is ISoftDelete) && ((ISoftDelete)a).IsDeleted != true);
-            }
-
-            return query;
+            return _dbSet.AsQueryable( );
         }
 
     }

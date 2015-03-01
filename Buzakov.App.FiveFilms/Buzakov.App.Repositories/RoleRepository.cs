@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Buzakov.App.DataContext.EntityManager;
 
-using Buzakov.App.DataContext.EntityManager;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Buzakov.App.Repositories
 {
-
     public class RoleRepository : BaseRepository<IdentityRole>
     {
 
     }
-
 }

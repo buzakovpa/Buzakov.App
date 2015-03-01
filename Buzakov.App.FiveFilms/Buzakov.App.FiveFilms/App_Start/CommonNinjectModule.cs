@@ -17,6 +17,7 @@ namespace Buzakov.App.FiveFilms.App_Start
 
             Kernel.Bind<IUserManagementService>().To<UserManagementService>();
             Kernel.Bind<IRoleManagementService>().To<RoleManagementService>();
+            Kernel.Bind<IDataLinkManagementService>( ).To<DataLinkManagementService>( );
         }
 
     }
