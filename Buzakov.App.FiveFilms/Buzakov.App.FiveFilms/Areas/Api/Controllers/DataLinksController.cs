@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
+
+using AutoMapper;
 
 using Buzakov.App.FiveFilms.Areas.Api.Models;
 using Buzakov.App.Models;
@@ -30,15 +33,23 @@ namespace Buzakov.App.FiveFilms.Areas.Api.Controllers
         }
 
         [Authorize( Roles = "Administrator" )]
-        public IDataLink Post( [FromBody] DataLinkBindingModel link )
+        public IDataLink Post( [FromBody] DataLinkBindingModel model )
         {
-            return _dataLinkService.Create(link);
+            if( model != null ) {
+                var link = Mapper.Map<DataLink>(model);
+                return _dataLinkService.Create(link);
+            }
+            throw new ArgumentNullException("model");
         }
 
         [Authorize( Roles = "Administrator" )]
-        public IDataLink Put( [FromBody] DataLinkBindingModel link )
+        public IDataLink Put( [FromBody] DataLinkBindingModel model )
         {
-            return _dataLinkService.Update(link);
+            if( model != null ) {
+                var link = Mapper.Map<DataLink>(model);
+                return _dataLinkService.Update(link);
+            }
+            throw new ArgumentNullException("model");
         }
 
         [Authorize( Roles = "Administrator" )]

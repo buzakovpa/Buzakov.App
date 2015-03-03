@@ -5,7 +5,7 @@ namespace Buzakov.App.Models
 {
 
     [Table( "DataLinks" )]
-    public class DataLink : IDataLink
+    public class DataLink : IDataLink, ISoftDelete
     {
 
         [Key, DatabaseGenerated( DatabaseGeneratedOption.Identity )]
@@ -14,6 +14,7 @@ namespace Buzakov.App.Models
         public string Url { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public LinkType Type { get; set; }
 
         public bool IsDeleted { get; set; }
 

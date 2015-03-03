@@ -1,8 +1,9 @@
 ﻿namespace Buzakov.App.Models
 {
-    public interface IDataLink : ILink
+
+    public interface IDataLink : ILink, ILinkDescription
     {
-        string Title { get; set; }
-        string Description { get; set; }
+
     }
+
 }

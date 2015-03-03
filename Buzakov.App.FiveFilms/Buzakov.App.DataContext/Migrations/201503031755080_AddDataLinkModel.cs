@@ -15,6 +15,7 @@ namespace Buzakov.App.DataContext.Migrations
                         Url = c.String(),
                         Title = c.String(),
                         Description = c.String(),
+                        Type = c.Int(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

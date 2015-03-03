@@ -13,7 +13,7 @@ namespace Buzakov.App.DataContext.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201503011032400_AddDataLinkModel"; }
+            get { return "201503031755080_AddDataLinkModel"; }
         }
         
         string IMigrationMetadata.Source
