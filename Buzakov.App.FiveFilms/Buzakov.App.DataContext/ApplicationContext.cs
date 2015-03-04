@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Buzakov.App.DataContext
 {
+
     public class ApplicationContext : IdentityDbContext<UserProfile>
     {
 
@@ -15,5 +16,8 @@ namespace Buzakov.App.DataContext
         }
 
         public IDbSet<DataLink> DataLinks { get; set; }
+        public IDbSet<Film> Films { get; set; }
+
     }
+
 }

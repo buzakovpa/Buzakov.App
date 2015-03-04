@@ -215,6 +215,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Api\Controllers\DataLinksController.cs" />
+    <Compile Include="Areas\Api\Controllers\FilmsController.cs" />
     <Compile Include="Areas\Api\Controllers\RolesController.cs" />
     <Compile Include="Areas\Api\Models\DataLinkBindingModel.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
