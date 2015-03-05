@@ -1,12 +1,8 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Buzakov.App.Models
+﻿namespace Buzakov.App.Models
 {
 
-    public interface IFilm
+    public interface IFilm : IFilmId, IFilmDescription
     {
-
-        int Id { get; set; }
 
     }
 

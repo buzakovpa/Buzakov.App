@@ -99,7 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLinkManagementService.cs" />
-    <Compile Include="IDataLinkManagementService.cs" />
+    <Compile Include="FilmManagementService.cs" />
+    <Compile Include="IDataLinkManager.cs" />
+    <Compile Include="IFilmManager.cs" />
     <Compile Include="IRoleManagementService.cs" />
     <Compile Include="IUserManagementService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

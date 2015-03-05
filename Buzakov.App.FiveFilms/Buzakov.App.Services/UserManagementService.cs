@@ -12,7 +12,7 @@ using Buzakov.App.DataContext.EntityManager;
 namespace Buzakov.App.Services
 {
 
-    public class UserManagementService : IUserManagementService
+    public class UserManagementService : IUserManager
     {
 
         private readonly IEntityManager _entityManager;

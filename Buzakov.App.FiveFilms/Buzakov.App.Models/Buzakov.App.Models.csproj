@@ -46,6 +46,7 @@
     <Compile Include="IFilm.cs" />
     <Compile Include="IFilmDataLinkRelation.cs" />
     <Compile Include="IFilmDescription.cs" />
+    <Compile Include="IFilmId.cs" />
     <Compile Include="ILink.cs" />
     <Compile Include="ILinkDescription.cs" />
     <Compile Include="ISoftDelete.cs" />

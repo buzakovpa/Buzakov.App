@@ -12,7 +12,7 @@ using Buzakov.App.Repositories;
 namespace Buzakov.App.Services
 {
 
-    public class DataLinkManagementService : IDataLinkManagementService
+    public class DataLinkManagementService : IDataLinkManager
     {
 
         private readonly DataLinkRepository _dataLinkRepository;

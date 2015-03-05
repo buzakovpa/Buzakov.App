@@ -7,7 +7,7 @@ using Buzakov.App.Models;
 namespace Buzakov.App.Services
 {
 
-    public interface IDataLinkManagementService
+    public interface IDataLinkManager
     {
 
         IEnumerable<DataLink> GetAll( );

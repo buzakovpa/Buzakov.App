@@ -7,7 +7,7 @@ using Buzakov.App.DataContext;
 namespace Buzakov.App.Services
 {
 
-    public interface IUserManagementService
+    public interface IUserManager
     {
 
         IEnumerable<UserProfile> GetAll( );

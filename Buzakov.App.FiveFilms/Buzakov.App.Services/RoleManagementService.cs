@@ -12,7 +12,7 @@ using Buzakov.App.Repositories;
 namespace Buzakov.App.Services
 {
 
-    public class RoleManagementService : IRoleManagementService
+    public class RoleManagementService : IRoleManager
     {
 
         private readonly IEntityManager _entityManager;

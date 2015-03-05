@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace Buzakov.App.Services
 {
 
-    public interface IRoleManagementService
+    public interface IRoleManager
     {
 
         IEnumerable<IdentityRole> GetAll( );

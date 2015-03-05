@@ -6,7 +6,7 @@ namespace Buzakov.App.Models
 {
 
     [Table( "Films" )]
-    public class Film : IFilm, IFilmDescription, ISoftDelete
+    public class Film : IFilm, ISoftDelete
     {
 
         [Key, DatabaseGenerated( DatabaseGeneratedOption.Identity )]
