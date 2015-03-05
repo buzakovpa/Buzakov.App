@@ -15,11 +15,11 @@ namespace Buzakov.App.FiveFilms.Areas.Api.Controllers
     public class DataLinksController : ApiController
     {
 
-        private readonly IDataLinkManagementService _dataLinkService;
+        private readonly IDataLinkManager _dataLinkService;
 
         public DataLinksController( )
         {
-            _dataLinkService = ( IDataLinkManagementService )System.Web.Mvc.DependencyResolver.Current.GetService(typeof( IDataLinkManagementService ));
+            _dataLinkService = ( IDataLinkManager )System.Web.Mvc.DependencyResolver.Current.GetService(typeof( IDataLinkManager ));
         }
 
         public IEnumerable<DataLink> Get( )

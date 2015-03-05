@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DataLink.cs" />
     <Compile Include="Film.cs" />
+    <Compile Include="FilmDataLinkRelation.cs" />
     <Compile Include="IDataLink.cs" />
     <Compile Include="IFilm.cs" />
     <Compile Include="IFilmDataLinkRelation.cs" />

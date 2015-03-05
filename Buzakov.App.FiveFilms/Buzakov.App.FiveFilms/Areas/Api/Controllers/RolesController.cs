@@ -11,11 +11,11 @@ namespace Buzakov.App.FiveFilms.Areas.Api.Controllers
     public class RolesController : ApiController
     {
         
-        private readonly IRoleManagementService _roleService;
+        private readonly IRoleManager _roleService;
 
         public RolesController( )
         {
-            _roleService = ( IRoleManagementService )System.Web.Mvc.DependencyResolver.Current.GetService(typeof( IRoleManagementService ));
+            _roleService = ( IRoleManager )System.Web.Mvc.DependencyResolver.Current.GetService(typeof( IRoleManager ));
         }
 
         public IEnumerable<IdentityRole> Get( )

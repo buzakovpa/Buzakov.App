@@ -2,6 +2,7 @@
 using System.Web.Http;
 
 using Buzakov.App.Models;
+using Buzakov.App.Services;
 
 namespace Buzakov.App.FiveFilms.Areas.Api.Controllers
 {

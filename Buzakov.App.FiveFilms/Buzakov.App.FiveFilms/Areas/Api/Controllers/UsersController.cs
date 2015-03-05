@@ -11,11 +11,11 @@ namespace Buzakov.App.FiveFilms.Areas.Api.Controllers
     public class UsersController : ApiController
     {
 
-        private readonly IUserManagementService _userService;
+        private readonly IUserManager _userService;
 
         public UsersController( )
         {
-            _userService = ( IUserManagementService )System.Web.Mvc.DependencyResolver.Current.GetService(typeof( IUserManagementService ));
+            _userService = ( IUserManager )System.Web.Mvc.DependencyResolver.Current.GetService(typeof( IUserManager ));
         }
 
         public IEnumerable<UserProfile> Get( )
