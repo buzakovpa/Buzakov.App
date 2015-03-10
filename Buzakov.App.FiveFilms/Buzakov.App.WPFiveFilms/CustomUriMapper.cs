@@ -12,7 +12,7 @@ namespace Buzakov.App.WPFiveFilms
         {
             var uriToLaunch = HttpUtility.UrlDecode(uri.ToString( ));
 
-            if( uriToLaunch.Contains("wp5films:Show") ) {
+            if( uriToLaunch.Contains("buzakov-5films:Show") ) {
                 uri = new Uri("/MainPage.xaml", UriKind.Relative);
             }
 

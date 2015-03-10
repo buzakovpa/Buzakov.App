@@ -4,7 +4,7 @@ namespace Buzakov.App.Models
 {
 
     [Table( "FilmDataLinkRelation" )]
-    public class FilmDataLinkRelation : IFilmDataLinkRelation
+    public class FilmDataLinkRelation : IFilmDataLinkRelation, ISoftDelete
     {
 
         public DataLink DataLink { get; set; }
@@ -34,6 +34,8 @@ namespace Buzakov.App.Models
                 Film = ( Film )value;
             }
         }
+
+        public bool IsDeleted { get; set; }
 
     }
 

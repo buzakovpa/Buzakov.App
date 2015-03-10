@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 
 using Buzakov.App.Models;
@@ -18,6 +19,7 @@ namespace Buzakov.App.FiveFilms.Areas.Api.Controllers
 
         public List<Film> Get( )
         {
+            throw new NotImplementedException();
         }
 
     }

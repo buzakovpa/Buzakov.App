@@ -114,7 +114,7 @@ namespace Buzakov.App.WPFiveFilms
             RootFrame = new PhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
-            RootFrame.UriMapper = new UriMapper();
+            RootFrame.UriMapper = new CustomUriMapper(  );
 
             // Handle navigation failures
             RootFrame.NavigationFailed += RootFrame_NavigationFailed;
