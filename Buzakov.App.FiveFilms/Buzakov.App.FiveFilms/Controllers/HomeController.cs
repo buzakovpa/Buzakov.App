@@ -1,10 +1,5 @@
-﻿
-using System.Linq;
-using System.Net;
+﻿using System;
 using System.Web.Mvc;
-using System.Web.WebPages;
-
-using Microsoft.AspNet.Identity;
 
 namespace Buzakov.App.FiveFilms.Controllers
 {
@@ -17,15 +12,20 @@ namespace Buzakov.App.FiveFilms.Controllers
             ViewBag.Title = "Home Page";
             return View( );
         }
-        
+
         public ActionResult Protocol( )
         {
             return Redirect("buzakov-5films:Show");
         }
 
-        public ActionResult Os()
+        public ActionResult Os( )
         {
-            return Content("Type: " + (Request.Browser.IsMobileDevice ? "Mobile" : "Desktop") );
+            var deviceType = ( Request.Browser.IsMobileDevice ? "Mobile" : "Desktop" );
+            var userAgent = Request.UserAgent;
+
+            var content = String.Format("Type: {0}<br/>" + "UserAgent: {1}", deviceType, userAgent);
+
+            return Content(content);
         }
 
     }
