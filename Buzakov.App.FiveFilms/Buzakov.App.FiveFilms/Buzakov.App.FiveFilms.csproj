@@ -208,6 +208,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\CommonNinjectModule.cs" />
+    <Compile Include="App_Start\DisplayModeConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
@@ -252,6 +253,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Helpers\DisplayModeHelper.cs" />
+    <Compile Include="Infrastructure\Helpers\DisplayModes.cs" />
     <Compile Include="Infrastructure\Mappers\DataLinkMapper.cs" />
     <Compile Include="Infrastructure\Mappers\IMapper.cs" />
     <Compile Include="Infrastructure\Mappers\MapperConfiguration.cs" />
@@ -319,6 +322,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.Mobile.cshtml" />
+    <Content Include="Views\Home\Index.WP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

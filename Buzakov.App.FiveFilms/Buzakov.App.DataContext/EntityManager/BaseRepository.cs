@@ -17,12 +17,7 @@ namespace Buzakov.App.DataContext.EntityManager
             _dbSet = _entityManager.GetContext( ).Set<TEntity>( );
         }
 
-        public virtual TEntity Find(int id)
-        {
-            return _dbSet.Find(id);
-        }
-
-        public virtual TEntity Find( string id )
+        public virtual TEntity Find(object id)
         {
             return _dbSet.Find(id);
         }

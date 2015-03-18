@@ -41,13 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLink.cs" />
-    <Compile Include="Film.cs" />
-    <Compile Include="FilmDataLinkRelation.cs" />
+    <Compile Include="Films\Film.cs" />
+    <Compile Include="Films\IFilm.cs" />
+    <Compile Include="Films\IFilmCommon.cs" />
+    <Compile Include="Films\IFilmDescription.cs" />
+    <Compile Include="Films\IFilmLinks.cs" />
     <Compile Include="IDataLink.cs" />
-    <Compile Include="IFilm.cs" />
-    <Compile Include="IFilmDataLinkRelation.cs" />
-    <Compile Include="IFilmDescription.cs" />
-    <Compile Include="IFilmId.cs" />
     <Compile Include="ILink.cs" />
     <Compile Include="ILinkDescription.cs" />
     <Compile Include="ISoftDelete.cs" />

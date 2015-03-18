@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 
 using Buzakov.App.Models;
+using Buzakov.App.Models.Films;
 
 using Microsoft.AspNet.Identity.EntityFramework;
 

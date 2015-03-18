@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-using Buzakov.App.Models;
+using Buzakov.App.Models.Films;
 
 namespace Buzakov.App.Services
 {
@@ -8,14 +8,7 @@ namespace Buzakov.App.Services
     public interface IFilmManager
     {
 
-        List<Film> Search( string query );
-        List<Film> GetRandList( int limit );
-
-        Film Create( IFilm film );
-        Film Update( IFilm film );
-        Film Details( int id );
-
-        void Delete( IFilm film );
+        List<Film> GetRandFilms( int limit = 5 );
 
     }
 

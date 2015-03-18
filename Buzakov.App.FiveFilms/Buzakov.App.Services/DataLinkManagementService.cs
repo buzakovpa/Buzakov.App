@@ -18,10 +18,10 @@ namespace Buzakov.App.Services
         private readonly DataLinkRepository _dataLinkRepository;
         private readonly IEntityManager _entityManager;
 
-        public DataLinkManagementService( IEntityManager entityManager )
+        public DataLinkManagementService( IEntityManager entityManager, DataLinkRepository dataLinkRepository )
         {
             _entityManager = entityManager;
-            _dataLinkRepository = _entityManager.GetRepository<DataLinkRepository>( );
+            _dataLinkRepository = dataLinkRepository;
         }
 
         public IEnumerable<DataLink> GetAll( )

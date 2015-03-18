@@ -8,7 +8,7 @@ namespace Buzakov.App.DataContext.EntityManager
     {
 
         ApplicationContext GetContext();
-        TRepository GetRepository<TRepository>() where TRepository : IRepository, new();
+
         void Commit();
 
     }

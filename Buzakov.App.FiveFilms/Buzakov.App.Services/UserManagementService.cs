@@ -17,13 +17,13 @@ namespace Buzakov.App.Services
 
         private readonly IEntityManager _entityManager;
         private readonly UserProfileRepository _userProfileRepository;
-        private readonly RoleRepository _roleRepository;
+        private readonly IRoleManager _roleManager;
 
-        public UserManagementService( IEntityManager entityManager )
+        public UserManagementService( IEntityManager entityManager, UserProfileRepository userProfileRepository, IRoleManager roleManager )
         {
             _entityManager = entityManager;
-            _userProfileRepository = entityManager.GetRepository<UserProfileRepository>( );
-            _roleRepository = entityManager.GetRepository<RoleRepository>( );
+            _userProfileRepository = userProfileRepository;
+            _roleManager = roleManager;
         }
 
         public IEnumerable<UserProfile> GetAll( )
@@ -55,7 +55,7 @@ namespace Buzakov.App.Services
                 throw new ArgumentNullException("roleId");
             }
 
-            var role = _roleRepository.Find(roleId);
+            var role = _roleManager.Details(roleId);
             if( role == null ) {
                 throw new ObjectNotFoundException( );
             }

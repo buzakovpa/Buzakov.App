@@ -1,5 +1,6 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+
+using Buzakov.App.FiveFilms.Infrastructure.Helpers;
 
 namespace Buzakov.App.FiveFilms.Controllers
 {
@@ -13,19 +14,15 @@ namespace Buzakov.App.FiveFilms.Controllers
             return View( );
         }
 
-        public ActionResult Protocol( )
+        public ActionResult Film( string id )
         {
-            return Redirect("buzakov-5films:Show");
-        }
+            if( this.IsWindowsPhone( ) ) {
+                var url = string.Format("buzakov-5films:Film/{0}", id);
 
-        public ActionResult Os( )
-        {
-            var deviceType = ( Request.Browser.IsMobileDevice ? "Mobile" : "Desktop" );
-            var userAgent = Request.UserAgent;
+                return Redirect(url);
+            }
 
-            var content = String.Format("Type: {0}<br/>" + "UserAgent: {1}", deviceType, userAgent);
-
-            return Content(content);
+            return Content(id);
         }
 
     }

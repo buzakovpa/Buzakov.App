@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core;
 using System.Linq;
-using System.Web.Mvc;
 
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -18,10 +17,10 @@ namespace Buzakov.App.Services
         private readonly IEntityManager _entityManager;
         private readonly RoleRepository _roleRepository;
 
-        public RoleManagementService( )
+        public RoleManagementService( IEntityManager entityManager, RoleRepository roleRepository )
         {
-            _entityManager = DependencyResolver.Current.GetService<IEntityManager>( );
-            _roleRepository = _entityManager.GetRepository<RoleRepository>( );
+            _entityManager = entityManager;
+            _roleRepository = roleRepository;
         }
 
         public IEnumerable<IdentityRole> GetAll( )
