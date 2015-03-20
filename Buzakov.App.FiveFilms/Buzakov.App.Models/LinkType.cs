@@ -4,6 +4,7 @@
     public enum LinkType
     {
 
+        MainScreen,
         Image,
         Video
 

@@ -9,6 +9,9 @@ namespace Buzakov.App.Services
     {
 
         List<Film> GetRandFilms( int limit = 5 );
+        Film Details( string id );
+        Film Create( IFilm film );
+        void Delete( string id );
 
     }
 
