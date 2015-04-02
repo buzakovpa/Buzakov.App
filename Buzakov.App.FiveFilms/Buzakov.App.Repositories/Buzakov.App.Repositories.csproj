@@ -52,11 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLinkRepository.cs" />
-    <Compile Include="FilmRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoleRepository.cs" />
-    <Compile Include="UserProfileRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Buzakov.App.DataContext\Buzakov.App.DataContext.csproj">

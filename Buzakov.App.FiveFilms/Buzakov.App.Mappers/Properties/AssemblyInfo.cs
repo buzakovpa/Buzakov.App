@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Buzakov.App.Models")]
+[assembly: AssemblyTitle("Buzakov.App.Mappers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Buzakov.App.Models")]
+[assembly: AssemblyProduct("Buzakov.App.Mappers")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,8 +19,8 @@ using System.Runtime.InteropServices;
 // COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// The following GUID is for the Id of the typelib if this project is exposed to COM
-[assembly: Guid("36890033-63e5-47e9-957c-cbbd3ead2941")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("5605a406-9716-439c-8caf-ca0362411cdb")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -63,7 +63,7 @@ namespace Buzakov.App.FiveFilms.Providers
 
         public override Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
         {
-            // Resource owner password credentials does not provide a client ID.
+            // Resource owner password credentials does not provide a client Id.
             if (context.ClientId == null)
             {
                 context.Validated();

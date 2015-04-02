@@ -1,19 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.FiveFilms", "Buzakov.App.FiveFilms\Buzakov.App.FiveFilms.csproj", "{915FA8B9-92DC-4F5F-A793-2F6FBF4AEF54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.DataContext", "Buzakov.App.DataContext\Buzakov.App.DataContext.csproj", "{B7CA1F21-2D25-46E6-8ADC-4856A6F5DE5C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.Models", "Buzakov.App.Models\Buzakov.App.Models.csproj", "{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.Repositories", "Buzakov.App.Repositories\Buzakov.App.Repositories.csproj", "{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.Services", "Buzakov.App.Services\Buzakov.App.Services.csproj", "{3B8378D8-BA89-41D3-A8BE-DB5168BC43E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.WPFiveFilms", "Buzakov.App.WPFiveFilms\Buzakov.App.WPFiveFilms.csproj", "{358C2DEE-1A7D-416C-A182-7A3DE72EBF59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buzakov.App.Mappers", "Buzakov.App.Mappers\Buzakov.App.Mappers.csproj", "{13823359-DBD2-4F15-B8E5-621A377B263C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,14 +47,6 @@ Global
 		{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}.Release|ARM.ActiveCfg = Release|Any CPU
 		{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}.Release|x86.ActiveCfg = Release|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Release|ARM.ActiveCfg = Release|Any CPU
-		{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B8378D8-BA89-41D3-A8BE-DB5168BC43E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B8378D8-BA89-41D3-A8BE-DB5168BC43E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B8378D8-BA89-41D3-A8BE-DB5168BC43E5}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -83,6 +73,14 @@ Global
 		{358C2DEE-1A7D-416C-A182-7A3DE72EBF59}.Release|x86.ActiveCfg = Release|x86
 		{358C2DEE-1A7D-416C-A182-7A3DE72EBF59}.Release|x86.Build.0 = Release|x86
 		{358C2DEE-1A7D-416C-A182-7A3DE72EBF59}.Release|x86.Deploy.0 = Release|x86
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{13823359-DBD2-4F15-B8E5-621A377B263C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,7 @@
 ﻿using System.Data.Entity;
-
 using Buzakov.App.Models;
-using Buzakov.App.Models.Films;
-
 using Microsoft.AspNet.Identity.EntityFramework;
+using Buzakov.App.DataContext.Configurations;
 
 namespace Buzakov.App.DataContext
 {
@@ -12,13 +10,19 @@ namespace Buzakov.App.DataContext
     {
 
         public ApplicationContext( )
-            : base("DefaultConnection")
+            : base( "DefaultConnection" )
         {
         }
 
-        public IDbSet<DataLink> DataLinks { get; set; }
+        public IDbSet<Link> DataLinks { get; set; }
         public IDbSet<Film> Films { get; set; }
 
-    }
+        protected override void OnModelCreating( DbModelBuilder modelBuilder )
+        {
+            base.OnModelCreating( modelBuilder );
 
+            modelBuilder.Configurations.Add( new FilmConfiguration( ) );
+            modelBuilder.Configurations.Add( new LinkConfiguration( ) );
+        }
+    }
 }

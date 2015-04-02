@@ -5,14 +5,14 @@ namespace Buzakov.App.DataContext.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Buzakov.App.DataContext.ApplicationContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Buzakov.App.DataContext.ApplicationContext context)
+        protected override void Seed(ApplicationContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -11,6 +11,7 @@ namespace Buzakov.App.FiveFilms.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Buzakov.App.DataContext;
+    using System.Web.Http;
 
     public static class NinjectWebCommon
     {
@@ -29,7 +30,7 @@ namespace Buzakov.App.FiveFilms.App_Start
             bootstrapper.ShutDown();
         }
 
-        private static IKernel CreateKernel()
+        public static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
             try
@@ -49,7 +50,7 @@ namespace Buzakov.App.FiveFilms.App_Start
 
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Load<CommonNinjectModule>();
+            kernel.Load<MainNinjectModule>();
         }
 
     }

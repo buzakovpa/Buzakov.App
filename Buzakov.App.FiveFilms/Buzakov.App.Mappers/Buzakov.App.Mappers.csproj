@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}</ProjectGuid>
+    <ProjectGuid>{13823359-DBD2-4F15-B8E5-621A377B263C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Buzakov.App.Models</RootNamespace>
-    <AssemblyName>Buzakov.App.Models</AssemblyName>
+    <RootNamespace>Buzakov.App.Mappers</RootNamespace>
+    <AssemblyName>Buzakov.App.Mappers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Film.cs" />
-    <Compile Include="IFilmCommon.cs" />
-    <Compile Include="IFilmLinkRelations.cs" />
-    <Compile Include="ILinkCommon.cs" />
-    <Compile Include="ISoftDelete.cs" />
-    <Compile Include="Link.cs" />
+    <Compile Include="Configurations\LinkConfiguration.cs" />
+    <Compile Include="Configurations\FilmConfiguration.cs" />
+    <Compile Include="IMapperConfiguration.cs" />
+    <Compile Include="MapperConfiguration.cs" />
+    <Compile Include="Models\FilmMapper.cs" />
+    <Compile Include="Models\LinkMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Buzakov.App.Models\Buzakov.App.Models.csproj">
+      <Project>{64f9dba5-6efb-4e16-a0d3-e82c8706cb99}</Project>
+      <Name>Buzakov.App.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

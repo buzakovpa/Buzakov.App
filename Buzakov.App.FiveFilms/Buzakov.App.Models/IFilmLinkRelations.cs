@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Buzakov.App.Models
 {
-    public interface ISoftDelete
+    public interface IFilmLinkRelations
     {
-        bool IsDeleted
+        System.Collections.Generic.List<ILinkCommon> Links
         {
             get;
             set;

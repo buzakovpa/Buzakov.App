@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -74,22 +80,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
-    <Compile Include="EntityManager\BaseRepository.cs" />
-    <Compile Include="EntityManager\EntityManager.cs" />
-    <Compile Include="EntityManager\IEntityManager.cs" />
-    <Compile Include="EntityManager\IRepository.cs" />
-    <Compile Include="EntityManager\SoftRepository.cs" />
-    <Compile Include="Migrations\201502251926145_Init.cs" />
-    <Compile Include="Migrations\201502251926145_Init.Designer.cs">
-      <DependentUpon>201502251926145_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201503031755080_AddDataLinkModel.cs" />
-    <Compile Include="Migrations\201503031755080_AddDataLinkModel.Designer.cs">
-      <DependentUpon>201503031755080_AddDataLinkModel.cs</DependentUpon>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Configurations\FilmConfiguration.cs" />
+    <Compile Include="Configurations\LinkConfiguration.cs" />
+    <Compile Include="DefaultEntityManager.cs" />
+    <Compile Include="IEntityManager.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201503241853257_Init.cs" />
+    <Compile Include="Migrations\201503241853257_Init.Designer.cs">
+      <DependentUpon>201503241853257_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\Seed\ISeed.cs" />
-    <Compile Include="Migrations\Seed\UserSeed.cs" />
+    <Compile Include="Repositories\DefaultFilmRepository.cs" />
+    <Compile Include="Repositories\DefaultLinkRepository.cs" />
+    <Compile Include="Repositories\IFilmRepository.cs" />
+    <Compile Include="Repositories\ILinkRepository.cs" />
     <Compile Include="UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -98,20 +103,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201502251926145_Init.resx">
-      <DependentUpon>201502251926145_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201503031755080_AddDataLinkModel.resx">
-      <DependentUpon>201503031755080_AddDataLinkModel.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\Buzakov.App.Mappers\Buzakov.App.Mappers.csproj">
+      <Project>{13823359-dbd2-4f15-b8e5-621a377b263c}</Project>
+      <Name>Buzakov.App.Mappers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Buzakov.App.Models\Buzakov.App.Models.csproj">
       <Project>{64f9dba5-6efb-4e16-a0d3-e82c8706cb99}</Project>
       <Name>Buzakov.App.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201503241853257_Init.resx">
+      <DependentUpon>201503241853257_Init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

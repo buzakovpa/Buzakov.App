@@ -5,7 +5,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 
 using Buzakov.App.FiveFilms.App_Start;
-using Buzakov.App.FiveFilms.Infrastructure.Mappers;
+using Buzakov.App.Mappers;
 
 namespace Buzakov.App.FiveFilms
 {
@@ -21,8 +21,8 @@ namespace Buzakov.App.FiveFilms
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            MapperConfiguration.Init( );
             DisplayModeConfig.Init( );
+            MapperConfiguration.Init( );
         }
 
     }

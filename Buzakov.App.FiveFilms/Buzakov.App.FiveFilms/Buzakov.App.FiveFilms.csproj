@@ -120,11 +120,9 @@
     <Reference Include="Ninject.Web.Common">
       <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject.Web.Mvc">
-      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Web.WebApi">
-      <HintPath>..\packages\Ninject.Web.WebApi.3.2.4.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.MVC3.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -207,7 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\CommonNinjectModule.cs" />
+    <Compile Include="App_Start\MainNinjectModule.cs" />
     <Compile Include="App_Start\DisplayModeConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -215,10 +213,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Areas\Api\Controllers\DataLinksController.cs" />
-    <Compile Include="Areas\Api\Controllers\FilmsController.cs" />
-    <Compile Include="Areas\Api\Controllers\RolesController.cs" />
-    <Compile Include="Areas\Api\Models\DataLinkBindingModel.cs" />
+    <Compile Include="Areas\Api\Controllers\FilmController.cs" />
+    <Compile Include="Areas\Api\Models\FilmMapped.cs" />
+    <Compile Include="Areas\Api\Models\LinkMapped.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -249,15 +246,11 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Areas\Api\Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Helpers\DisplayModeHelper.cs" />
     <Compile Include="Infrastructure\Helpers\DisplayModes.cs" />
-    <Compile Include="Infrastructure\Mappers\DataLinkMapper.cs" />
-    <Compile Include="Infrastructure\Mappers\IMapper.cs" />
-    <Compile Include="Infrastructure\Mappers\MapperConfiguration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -337,13 +330,13 @@
       <Project>{b7ca1f21-2d25-46e6-8adc-4856a6f5de5c}</Project>
       <Name>Buzakov.App.DataContext</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Buzakov.App.Mappers\Buzakov.App.Mappers.csproj">
+      <Project>{13823359-dbd2-4f15-b8e5-621a377b263c}</Project>
+      <Name>Buzakov.App.Mappers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Buzakov.App.Models\Buzakov.App.Models.csproj">
       <Project>{64F9DBA5-6EFB-4E16-A0D3-E82C8706CB99}</Project>
       <Name>Buzakov.App.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Buzakov.App.Repositories\Buzakov.App.Repositories.csproj">
-      <Project>{96E5B56D-4093-4BC4-BED6-15C4D7B541C6}</Project>
-      <Name>Buzakov.App.Repositories</Name>
     </ProjectReference>
     <ProjectReference Include="..\Buzakov.App.Services\Buzakov.App.Services.csproj">
       <Project>{3b8378d8-ba89-41d3-a8be-db5168bc43e5}</Project>
